@@ -1,0 +1,30 @@
+intro
+    when start quiz button is clicked
+        start quiz
+
+    when view high scores is clicked
+        show high scores
+
+quiz
+    set time limit to 75 seconds
+        count down
+    loop through questions
+        if user selects right answer to questions
+            go to next question
+        else
+            subtract 15 seconds then go to the next question
+    if there are no more questions left
+        display score
+
+display score
+    tell user his score 
+    prompt user to enter their initials
+    user score is saved in local storage
+
+
+///////////////////////////////////////////
+hide quiz start
+loop through each question in questions array
+create new div w/ class questionsArray in questions class div
+create buttons for each choice in questions array object
+
