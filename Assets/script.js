@@ -1,9 +1,11 @@
 $("#begin").on("click", quizInitialization)
+//$(document).on("click", ".choice", Quiz)
+var count = 75
 
 function quizInitialization(){
     $(".intro").hide();
     questionsLoop()
-    beginQuiz()
+    startTimer()
 }
 
 function questionsLoop(){
@@ -20,11 +22,33 @@ function questionsLoop(){
             btn.appendTo(div);
             //console.log(choice)
         }
+        $("#1").show()
+    }
+    Quiz()
+}
+
+function Quiz(){
+    var el = $(".questions");
+    var child = el.children()
+    for(let i = 0; i < child.length; i++){
+        $(document).on("click", ".choice", function(){
+            $(this).parent().hide()
+            if($(this).text() === questions[i].answer){
+                console.log(child[i]) //use parent and sibling elements to show and hide elements
+                console.log("correct")
+            }
+
+        })
     }
 }
 
-function beginQuiz(){
-    for( let i = 0; i < questions.length; i++){
-        
-    } 
+
+function startTimer(){
+     timer = setInterval(function() {
+        $("#timer").html(count--)
+        if(count < 1){
+            clearInterval(timer)
+            //stopQuiz()
+        }
+    }, 1000);
 }

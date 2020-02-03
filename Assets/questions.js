@@ -13,7 +13,7 @@ var questions = [
     },
     {
         title: "Arrays in Javascript can be used to store:",
-        choices: ["numbers and strings", "integers", "arrays", "objects", "All of the above"],
+        choices: ["strings", "integers", "arrays", "objects", "all of the above"],
         answer: "all of the above",
         log: 3
     },
