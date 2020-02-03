@@ -5,7 +5,9 @@ var count = 75
 function quizInitialization(){
     $(".intro").hide();
     questionsLoop()
+    Quiz()
     startTimer()
+    
 }
 
 function questionsLoop(){
@@ -24,31 +26,38 @@ function questionsLoop(){
         }
         $("#1").show()
     }
-    Quiz()
 }
 
 function Quiz(){
-    var el = $(".questions");
-    var child = el.children()
-    for(let i = 0; i < child.length; i++){
+    var i = 0;
         $(document).on("click", ".choice", function(){
             $(this).parent().hide()
+            $(this).parent().next().show()
             if($(this).text() === questions[i].answer){
-                console.log(child[i]) //use parent and sibling elements to show and hide elements
                 console.log("correct")
             }
-
+            else{
+                count -= 15
+            }
+            i++
+            if(i > 4){
+                clearInterval(timer)
+                stopQuiz()
+            }
         })
-    }
-}
 
+}
 
 function startTimer(){
      timer = setInterval(function() {
         $("#timer").html(count--)
         if(count < 1){
             clearInterval(timer)
-            //stopQuiz()
+            stopQuiz()
         }
     }, 1000);
+}
+
+function stopQuiz(){
+    console.log("complete")
 }
