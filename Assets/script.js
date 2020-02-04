@@ -2,7 +2,8 @@ $("#begin").on("click", quizInitialization)
 //$(document).on("click", ".choice", Quiz)
 var count = 75
 
-function quizInitialization(){
+function quizInitialization(event){
+    event.preventDefault()
     $(".intro").hide();
     questionsLoop()
     Quiz()
@@ -30,7 +31,8 @@ function questionsLoop(){
 
 function Quiz(){
     var i = 0;
-        $(document).on("click", ".choice", function(){
+        $(document).on("click", ".choice", function(event){
+            event.preventDefault()
             $(this).parent().hide()
             $(this).parent().next().show()
             if($(this).text() === questions[i].answer){
@@ -40,7 +42,7 @@ function Quiz(){
                 count -= 15
             }
             i++
-            if(i > 4){
+            if(i >= questions.length){
                 clearInterval(timer)
                 stopQuiz()
             }
@@ -59,5 +61,24 @@ function startTimer(){
 }
 
 function stopQuiz(){
+    var container = $("#final-score-container-main")
+    var score = $("#score-container")
+    score.text("Your final score is " + $("#timer").html() + ".")
+    container.show()
     console.log("complete")
+    
+}
+
+$(document).on("click", "#submit", function(event){
+    event.preventDefault()
+    var initials = $("#initials").val()
+    localStorage.setItem("initials", initials)
+    highscore()
+})
+
+function highscore(){
+    var highscoresDiv = $("#high-scores")
+    for(var i = 0; i  < localStorage.length; i++){
+        highscoresDiv.append(localStorage.getItem(localStorage.key(i)))
+    }
 }
