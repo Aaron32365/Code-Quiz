@@ -8,7 +8,6 @@ function quizInitialization(event){
     questionsLoop()
     Quiz()
     startTimer()
-    
 }
 
 function questionsLoop(){
@@ -31,14 +30,17 @@ function questionsLoop(){
 
 function Quiz(){
     var i = 0;
+    var rightOrWrong = $("#RightOrWrong")
         $(document).on("click", ".choice", function(event){
             event.preventDefault()
             $(this).parent().hide()
             $(this).parent().next().show()
             if($(this).text() === questions[i].answer){
                 console.log("correct")
+                rightOrWrong.text("Correct!").show().delay(1000).fadeOut()
             }
             else{
+                rightOrWrong.text("Sorry, Incorrect! - 15 seconds.").show().delay(1000).fadeOut()
                 count -= 15
             }
             i++
@@ -47,7 +49,6 @@ function Quiz(){
                 stopQuiz()
             }
         })
-
 }
 
 function startTimer(){
@@ -66,19 +67,26 @@ function stopQuiz(){
     score.text("Your final score is " + $("#timer").html() + ".")
     container.show()
     console.log("complete")
-    
 }
+
+$(document).on("click", "#clearHScores", function(event){
+    event.preventDefault()
+    localStorage.clear()
+    $("#high-scores").empty()
+})
 
 $(document).on("click", "#submit", function(event){
     event.preventDefault()
     var initials = $("#initials").val()
-    localStorage.setItem("initials", initials)
+    localStorage.setItem( initials, initials)
     highscore()
 })
 
 function highscore(){
+    $("#final-score-container-main").hide()
+    $("#high-scores-main").show()
     var highscoresDiv = $("#high-scores")
     for(var i = 0; i  < localStorage.length; i++){
-        highscoresDiv.append(localStorage.getItem(localStorage.key(i)))
+        highscoresDiv.append( "<br>" + localStorage.getItem(localStorage.key(i)))
     }
 }
