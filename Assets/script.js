@@ -74,11 +74,11 @@ $(document).on("click", "#clearHScores", function(event){
     localStorage.clear()
     $("#high-scores").empty()
 })
-
 $(document).on("click", "#submit", function(event){
     event.preventDefault()
+    var score = $("#timer").text()
     var initials = $("#initials").val()
-    localStorage.setItem( initials, initials)
+    localStorage.setItem( initials, score)
     highscore()
 })
 
@@ -86,7 +86,14 @@ function highscore(){
     $("#final-score-container-main").hide()
     $("#high-scores-main").show()
     var highscoresDiv = $("#high-scores")
+    var sort = [""]
     for(var i = 0; i  < localStorage.length; i++){
-        highscoresDiv.append( "<br>" + localStorage.getItem(localStorage.key(i)))
+        highscoresDiv.append(localStorage.key(i) + " - ")
+        highscoresDiv.append(localStorage.getItem(localStorage.key(i)) + "<br>")
     }
+
 }
+
+$(document).on("click", "#goBack", function(){
+location.reload(true)
+})
