@@ -4,7 +4,7 @@ var count = 75
 
 function quizInitialization(event){
     event.preventDefault()
-    $(".intro").hide();
+    $("#intro-header").hide();
     questionsLoop()
     Quiz()
     startTimer()
@@ -47,6 +47,7 @@ function Quiz(){
             if(i >= questions.length){
                 clearInterval(timer)
                 stopQuiz()
+                $("#timer").hide()
             }
         })
 }
@@ -57,6 +58,7 @@ function startTimer(){
         if(count < 1){
             clearInterval(timer)
             stopQuiz()
+            $("#timer").hide()
         }
     }, 1000);
 }
