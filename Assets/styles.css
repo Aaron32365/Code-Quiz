@@ -9,8 +9,8 @@ body{
 }
 #timer{
     float: right;
-    padding-top: 15px;
-    padding-right: 25px;
+    padding-top: 64px;
+    padding-right: 86px;
     font-size: 1.8em;
 }
 #highScores{
@@ -27,15 +27,48 @@ body{
     top: 200px;
     max-width: 625px;
     border-style: solid;
-    border-width: 18px;
+    border-width: 10px;
     border-radius: 12px;
     background-color: #F1F1F1;
-    border-color: #267FD2;
+    border-color: #949494;
     text-align: center;
 }
 
 .main{
-    
+
     max-width: 600px;
 
+}
+
+.questionStyle{
+    font-size: 1.3em;
+    text-align: center;
+    margin-top: 140px;
+}
+button{
+    margin: 5px;
+    border-radius: 6px;
+    border-style: none;
+    background-color: #757F9A;
+    color: white;
+    padding: 6px;
+}
+
+#final-score-container-main{
+    text-align: center;
+    margin-top: 140px;
+}
+
+#high-scores-main{
+    text-align: center;
+    margin-top: 140px;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+#RightOrWrong{
+    text-align: center;
 }
