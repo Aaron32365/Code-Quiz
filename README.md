@@ -13,10 +13,6 @@ Credits☝️
 
 License🔏 
 
-Badges⚠️ 
-
-Installation
-
 # Links:
 https://github.com/Aaron32365/Javascript-Code-Quiz
 https://aaron32365.github.io/Code-Quiz/
@@ -33,10 +29,7 @@ Test your skills and knowledge in a Javascript Code Quiz;
 # License:
 None
 
-Credits
+Credits 
+
 Code by Aaron Williams
 
-License
-None
-
-Badges
