@@ -4,11 +4,17 @@ A short quiz on some JavaScript fundamentals utilizing local storage
 Table of Contents 📓
 
 GitHub Pages Url
-Installation🔧
-Usage💡
-Credits☝️
-License🔏
-Badges⚠️
+
+Installation🔧 
+
+Usage💡 
+
+Credits☝️ 
+
+License🔏 
+
+Badges⚠️ 
+
 Installation
 
 # Links:
