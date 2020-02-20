@@ -14,8 +14,9 @@ Credits☝️
 License🔏 
 
 # Links:
-https://github.com/Aaron32365/Javascript-Code-Quiz
-https://aaron32365.github.io/Code-Quiz/
+https://github.com/Aaron32365/Javascript-Code-Quiz 
+
+https://aaron32365.github.io/Javascript-Code-Quiz/
 
 # Installation:
 None, simply click the link above and begin the quiz.
